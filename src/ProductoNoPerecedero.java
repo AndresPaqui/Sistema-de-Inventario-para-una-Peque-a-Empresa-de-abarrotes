@@ -9,4 +9,15 @@ public class ProductoNoPerecedero extends Producto{
         super(codigo, nombre, precio, cantidad, ID = random.nextInt(1000), random);
         this.garantia = garantia;
     }
+
+    public int getGarantia() {
+        return garantia;
+    }
+
+    public void setGarantia(int garantia) {
+        this.garantia = garantia;
+    }
+
+
+    public int getGarantiaMeses() { return garantia; }
 }
