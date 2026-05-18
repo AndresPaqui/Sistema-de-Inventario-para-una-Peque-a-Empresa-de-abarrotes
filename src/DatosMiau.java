@@ -23,6 +23,10 @@ public class DatosMiau {
                 mes,
                 año
         );
+
+        inventario.agregar(p);
+
+        System.out.println("Perecedero agregado");
     }
 
     public void agregarNoPerecedero(String nombre, int codigo, double precio,
@@ -35,6 +39,10 @@ public class DatosMiau {
                 random,
                 garantia
         );
+
+        inventario.agregar(p);
+
+        System.out.println("No perecedero agregado");
     }
 
     public void eliminarProducto(int id) {
@@ -61,4 +69,7 @@ public class DatosMiau {
         }
         return total;
     }
+
+    //Llamamos a los metodos de inventario
+
 }

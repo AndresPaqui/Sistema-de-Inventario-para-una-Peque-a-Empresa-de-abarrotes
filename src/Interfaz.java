@@ -66,6 +66,9 @@ public class Interfaz {
             refrescarTabla();
         });
 
+
+
+        refrescarTabla();
         ventana.setVisible(true);
     }
 
