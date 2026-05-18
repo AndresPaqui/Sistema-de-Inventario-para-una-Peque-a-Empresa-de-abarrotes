@@ -12,16 +12,29 @@ public class DatosMiau {
 
     public void agregarPerecedero(String nombre, int codigo, double precio,
                                   int cantidad, int dia, int mes, int año) {
+
         ProductoPerecedero p = new ProductoPerecedero(
-                codigo, nombre, precio, cantidad, 0, random, dia, mes, año);
-        inventario.agregar(p);
+                codigo,
+                nombre,
+                precio,
+                cantidad,
+                random,
+                dia,
+                mes,
+                año
+        );
     }
 
     public void agregarNoPerecedero(String nombre, int codigo, double precio,
                                     int cantidad, int garantia) {
         ProductoNoPerecedero p = new ProductoNoPerecedero(
-                codigo, nombre, precio, cantidad, 0, random, garantia);
-        inventario.agregar(p);
+                codigo,
+                nombre,
+                precio,
+                cantidad,
+                random,
+                garantia
+        );
     }
 
     public void eliminarProducto(int id) {
