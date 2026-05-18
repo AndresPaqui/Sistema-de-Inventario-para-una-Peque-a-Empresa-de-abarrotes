@@ -118,10 +118,14 @@ public class Interfaz {
 
         try {
             String nombre   = txtNombre.getText().trim();
-            int    codigo   = 0; // Se mantiene según tu lógica original
-            double precio   = Double.parseDouble(txtPrecio.getText().trim());
+            int    codigo   = 0;
+            double precio = Double.parseDouble(txtPrecio.getText().trim());
             int    cantidad = Integer.parseInt(txtCantidad.getText().trim());
 
+            if (precio < 0 || cantidad < 0) {
+                JOptionPane.showMessageDialog(null, "No ngrese numeros negativos");
+                return;
+            }
             if (cbTipo.getSelectedIndex() == 0) {
                 int dia = Integer.parseInt(txtDia.getText().trim());
                 int mes = Integer.parseInt(txtMes.getText().trim());
@@ -133,7 +137,7 @@ public class Interfaz {
             }
 
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Revise los campos numéricos.");
+            JOptionPane.showMessageDialog(null, "Ingrese una fecha valida.");
         }
     }
 
