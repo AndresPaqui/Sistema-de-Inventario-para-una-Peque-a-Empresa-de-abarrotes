@@ -71,7 +71,6 @@ public class Interfaz {
 
     private void mostrarFormularioAgregar() {
         JTextField txtNombre   = new JTextField(15);
-        JTextField txtCodigo   = new JTextField(15);
         JTextField txtPrecio   = new JTextField(15);
         JTextField txtCantidad = new JTextField(15);
         JComboBox<String> cbTipo = new JComboBox<>(new String[]{"Perecedero", "No Perecedero"});
@@ -79,6 +78,26 @@ public class Interfaz {
         JTextField txtMes      = new JTextField(5);
         JTextField txtAño      = new JTextField(5);
         JTextField txtGarantia = new JTextField(5);
+
+        txtGarantia.setEnabled(false);
+
+        cbTipo.addActionListener(e -> {
+            if (cbTipo.getSelectedIndex() == 0) { // Perecedero
+                txtDia.setEnabled(true);
+                txtMes.setEnabled(true);
+                txtAño.setEnabled(true);
+                txtGarantia.setEnabled(false);
+                txtGarantia.setText(""); // Limpia el campo si tenía algo
+            } else { // No Perecedero
+                txtDia.setEnabled(false);
+                txtMes.setEnabled(false);
+                txtAño.setEnabled(false);
+                txtDia.setText("");  // Limpia los campos
+                txtMes.setText("");
+                txtAño.setText("");
+                txtGarantia.setEnabled(true);
+            }
+        });
 
         JPanel panel = new JPanel(new GridLayout(0, 2, 5, 5));
         panel.add(new JLabel("Nombre:"));        panel.add(txtNombre);
@@ -96,7 +115,7 @@ public class Interfaz {
 
         try {
             String nombre   = txtNombre.getText().trim();
-            int    codigo   = 0;
+            int    codigo   = 0; // Se mantiene según tu lógica original
             double precio   = Double.parseDouble(txtPrecio.getText().trim());
             int    cantidad = Integer.parseInt(txtCantidad.getText().trim());
 
