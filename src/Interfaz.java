@@ -128,8 +128,20 @@ public class Interfaz {
             }
             if (cbTipo.getSelectedIndex() == 0) {
                 int dia = Integer.parseInt(txtDia.getText().trim());
+                if(dia > 31) {
+                    JOptionPane.showMessageDialog(null, "Ingrese una dia valido.");
+                    return;
+                }
                 int mes = Integer.parseInt(txtMes.getText().trim());
+                if(mes > 12) {
+                    JOptionPane.showMessageDialog(null, "Ingrese un mes valido.");
+                    return;
+                }
                 int año = Integer.parseInt(txtAño.getText().trim());
+                if(año < 2026) {
+                    JOptionPane.showMessageDialog(null, "Ingrese una año valido.");
+                    return;
+                }
                 controlador.agregarPerecedero(nombre, codigo, precio, cantidad, dia, mes, año);
             } else {
                 int garantia = Integer.parseInt(txtGarantia.getText().trim());
