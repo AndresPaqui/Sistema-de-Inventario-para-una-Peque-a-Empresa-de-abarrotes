@@ -85,17 +85,17 @@ public class Interfaz {
         txtGarantia.setEnabled(false);
 
         cbTipo.addActionListener(e -> {
-            if (cbTipo.getSelectedIndex() == 0) { // Perecedero
+            if (cbTipo.getSelectedIndex() == 0) { 
                 txtDia.setEnabled(true);
                 txtMes.setEnabled(true);
                 txtAño.setEnabled(true);
                 txtGarantia.setEnabled(false);
-                txtGarantia.setText(""); // Limpia el campo si tenía algo
-            } else { // No Perecedero
+                txtGarantia.setText(""); 
+            } else { 
                 txtDia.setEnabled(false);
                 txtMes.setEnabled(false);
                 txtAño.setEnabled(false);
-                txtDia.setText("");  // Limpia los campos
+                txtDia.setText(""); 
                 txtMes.setText("");
                 txtAño.setText("");
                 txtGarantia.setEnabled(true);
